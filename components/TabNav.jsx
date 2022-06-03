@@ -4,8 +4,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import About from '../pages/about';
-import Home from '../pages/home';
+import About from '../components/about';
+import Home from '../components/home';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -32,6 +32,7 @@ TabPanel.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
+//for accessibility, i think...
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
@@ -52,7 +53,6 @@ export default function BasicTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
           <Tab label="About" {...a11yProps(0)} />
           <Tab label="Home" {...a11yProps(1)} />
-          <Tab label="something else" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -60,9 +60,6 @@ export default function BasicTabs() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Home/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
       </TabPanel>
     </Box>
   );

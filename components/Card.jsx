@@ -5,6 +5,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link'
 
 const bull = (
   <Box
@@ -17,7 +18,7 @@ const bull = (
 
 export default function BasicCard(props) {
   return (
-    <Card sx={{ minWidth: 275 }}>
+    <Card sx={{ minWidth: 275 }} variant="outlined">
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           {props.date}
@@ -30,7 +31,12 @@ export default function BasicCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Read More</Button>
+        <Link
+            href={`/posts/${props.slug}`
+            }
+          >
+          <a>Read More Here</a>
+          </Link>
       </CardActions>
     </Card>
   );
