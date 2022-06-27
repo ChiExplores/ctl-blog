@@ -17,3 +17,5 @@ I think I will go with option 1. move the files into components.
 
 Update - problem with no history route. 
 The issue with 1 is if I press back, I will always land on the 'About' tab
+
+

@@ -1,6 +1,7 @@
-import Card from "../components/Card.jsx";
+import BasicCard from "../components/BasicCard";
 import { Box, ThemeProvider, createTheme } from "@mui/system";
 import Grid from "@mui/material/Grid";
+import { blue, red } from "@mui/material/colors";
 // import { withStyles } from "@material-ui/core/styles";
 
 const theme = createTheme({
@@ -40,21 +41,26 @@ const seedData = [
 const Home = () => {
   return (
     <>
+    {/* <div>{posts}</div> */}
       {seedData.map((post) => (
-        <Box sx={{ m:3 }}>
-        <Card
-          padding={10}
-          margin={5}
-          // className={classes.root}
+        <BasicCard
+          sx={{
+            color: blue,
+            '&.MuiCard-root': {
+              margin: '30px',
+              color: red
+            },
+          }}
           title={post.title}
           date={post.date}
           description={post.description}
           slug={post.slug}
         />
-        </Box>
       ))}
     </>
   );
 };
+
+
 
 export default Home;
